@@ -21,69 +21,6 @@
     });
   }
 
-  // Tabs
-  var tabButtons = document.querySelectorAll('.tab-btn');
-  var tabPanels = document.querySelectorAll('.tab-panel');
-
-  function activateTab(name) {
-    tabButtons.forEach(function (btn) {
-      var isActive = btn.dataset.tab === name;
-      btn.classList.toggle('is-active', isActive);
-      btn.setAttribute('aria-selected', String(isActive));
-    });
-    tabPanels.forEach(function (panel) {
-      var isActive = panel.dataset.panel === name;
-      panel.classList.toggle('is-active', isActive);
-      if (isActive) {
-        panel.removeAttribute('hidden');
-      } else {
-        panel.setAttribute('hidden', '');
-      }
-    });
-  }
-
-  tabButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      activateTab(btn.dataset.tab);
-    });
-  });
-
-  document.querySelectorAll('[data-tab-target]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      activateTab(link.dataset.tabTarget);
-      document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // Progress tracker
-  var trackerList = document.getElementById('trackerList');
-  var trackerFill = document.getElementById('trackerFill');
-  var trackerPercent = document.getElementById('trackerPercent');
-
-  if (trackerList) {
-    var checkboxes = trackerList.querySelectorAll('input[type="checkbox"]');
-
-    function updateTracker() {
-      var total = checkboxes.length;
-      var done = 0;
-      checkboxes.forEach(function (cb) {
-        var item = cb.closest('.tracker-item');
-        item.classList.toggle('is-done', cb.checked);
-        if (cb.checked) done++;
-      });
-      var pct = total ? Math.round((done / total) * 100) : 0;
-      trackerFill.style.width = pct + '%';
-      trackerPercent.textContent = pct + '%';
-    }
-
-    checkboxes.forEach(function (cb) {
-      cb.addEventListener('change', updateTracker);
-    });
-
-    updateTracker();
-  }
-
   // Contact form validation
   var contactForm = document.getElementById('contactForm');
 
