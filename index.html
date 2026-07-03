@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texnologia — Ελληνικό tech content για software engineers</title>
+<meta name="description" content="Podcast, videos και templates για μηχανικούς λογισμικού. Ελληνικό tech content, δωρεάν.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="#top" class="logo">
+      <span class="logo-mark">TX</span>
+      Texnologia
+    </a>
+
+    <nav class="nav-links" aria-label="Κύρια πλοήγηση">
+      <a href="#categories">Περιεχόμενο</a>
+      <a href="#catalog">Κατάλογος</a>
+      <a href="#tracker">Tracker</a>
+      <a href="#about">Σχετικά</a>
+      <a href="#contact">Επικοινωνία</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#newsletter" class="btn btn-primary btn-sm">Εγγραφή</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="eyebrow">Ελληνικό tech content</p>
+        <h1>Μάθε engineering, χωρίς σκουπίδια γύρω-γύρω.</h1>
+        <p>Podcast, videos και templates για developers που θέλουν να χτίσουν, να μάθουν system design και να προχωρήσουν στην καριέρα τους — στα ελληνικά, δωρεάν.</p>
+        <div class="hero-actions">
+          <a href="#catalog" class="btn btn-primary">Δες το Podcast</a>
+          <a href="#catalog" class="btn btn-secondary">Δωρεάν Templates</a>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value">48</div>
+          <div class="stat-label">επεισόδια</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">120+</div>
+          <div class="stat-label">videos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">30</div>
+          <div class="stat-label">templates</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">6k</div>
+          <div class="stat-label">συνδρομητές</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Categories -->
+  <section id="categories">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Περιεχόμενο</p>
+        <h2>Τρεις τρόποι να μάθεις</h2>
+        <p>Διάλεξε τη μορφή που σου ταιριάζει — όλα δωρεάν, όλα φτιαγμένα για engineers.</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v3"/></svg>
+          </div>
+          <h3>Podcast</h3>
+          <p>Συζητήσεις για system design, καριέρα και engineering culture, με καλεσμένους από το χώρο.</p>
+          <a href="#catalog" class="card-link" data-tab-target="podcast">Άκουσε τα επεισόδια →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <h3>YouTube</h3>
+          <p>Πρακτικά videos για tools, workflows και βαθιά technical dives χωρίς περιττή φλυαρία.</p>
+          <a href="#catalog" class="card-link" data-tab-target="videos">Δες τα videos →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          </div>
+          <h3>Templates</h3>
+          <p>Έτοιμα starters, checklists και configs για να ξεκινάς project χωρίς boilerplate.</p>
+          <a href="#catalog" class="card-link" data-tab-target="templates">Κατέβασε templates →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview / Catalog -->
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Κατάλογος</p>
+        <h2>Πρόσφατο περιεχόμενο</h2>
+        <p>Μια γεύση από ό,τι θα βρεις — νέο περιεχόμενο κάθε εβδομάδα.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Κατηγορίες περιεχομένου">
+        <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-podcast" id="tab-podcast" data-tab="podcast">Podcast</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-videos" id="tab-videos" data-tab="videos">Videos</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-templates" id="tab-templates" data-tab="templates">Templates</button>
+      </div>
+
+      <div class="tab-panel is-active" id="panel-podcast" role="tabpanel" aria-labelledby="tab-podcast" data-panel="podcast">
+        <div class="list-items">
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">System design 101</div>
+              <div class="list-item-meta mono">Επεισόδιο 48</div>
+            </div>
+            <div class="list-item-meta mono">42 λεπτά</div>
+          </div>
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">Από junior σε senior</div>
+              <div class="list-item-meta mono">Επεισόδιο 47</div>
+            </div>
+            <div class="list-item-meta mono">55 λεπτά</div>
+          </div>
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">Code review χωρίς δράματα</div>
+              <div class="list-item-meta mono">Επεισόδιο 46</div>
+            </div>
+            <div class="list-item-meta mono">38 λεπτά</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-videos" role="tabpanel" aria-labelledby="tab-videos" data-panel="videos" hidden>
+        <div class="list-items">
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">Git που δεν σπάει</div>
+            </div>
+            <div class="list-item-meta mono">14:20 · 8.2k views</div>
+          </div>
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">Τι κάνει ένα index</div>
+            </div>
+            <div class="list-item-meta mono">22:05 · 12.4k views</div>
+          </div>
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">Terminal setup 2026</div>
+            </div>
+            <div class="list-item-meta mono">09:47 · 5.6k views</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-templates" role="tabpanel" aria-labelledby="tab-templates" data-panel="templates" hidden>
+        <div class="list-items">
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">CI/CD starter</div>
+              <div class="list-item-meta mono">GitHub Actions + Docker</div>
+            </div>
+            <button class="btn btn-secondary btn-sm">Download</button>
+          </div>
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">Next.js + Supabase starter</div>
+              <div class="list-item-meta mono">Auth + DB + Storage</div>
+            </div>
+            <button class="btn btn-secondary btn-sm">Download</button>
+          </div>
+          <div class="list-item">
+            <div>
+              <div class="list-item-title">Production checklist</div>
+              <div class="list-item-meta mono">Markdown checklist</div>
+            </div>
+            <button class="btn btn-secondary btn-sm">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Tracker Demo -->
+  <section id="tracker">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Live Demo</p>
+        <h2>Παρακολούθησε την πρόοδό σου</h2>
+        <p>Δοκίμασε τον progress tracker που χρησιμοποιούν όσοι ακολουθούν τα learning paths μας.</p>
+      </div>
+
+      <div class="tracker-card">
+        <div class="tracker-head">
+          <h3>Learning path: Backend Fundamentals</h3>
+          <div class="tracker-percent" id="trackerPercent">0%</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="trackerFill"></div>
+        </div>
+        <div class="tracker-list" id="trackerList">
+          <div class="tracker-item">
+            <input type="checkbox" id="step-1">
+            <label for="step-1">Δες το πρώτο επεισόδιο του podcast</label>
+          </div>
+          <div class="tracker-item">
+            <input type="checkbox" id="step-2">
+            <label for="step-2">Κάνε το πρώτο PR με το code review checklist</label>
+          </div>
+          <div class="tracker-item">
+            <input type="checkbox" id="step-3">
+            <label for="step-3">Στήσε CI/CD με το starter template</label>
+          </div>
+          <div class="tracker-item">
+            <input type="checkbox" id="step-4">
+            <label for="step-4">Πήγαινε σε production με το checklist</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Testimonials</p>
+        <h2>Τι λένε όσοι το ακολουθούν</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial">
+          <p>"Το system design επεισόδιο μου έλυσε κάτι που είχα μπλοκάρει μήνες. Απλή εξήγηση, χωρίς jargon."</p>
+          <div class="testimonial-author">
+            <div class="avatar">ΜΚ</div>
+            <div>
+              <div class="author-name">Μαρία Κ.</div>
+              <div class="author-role">Backend Engineer, startup</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p>"Χρησιμοποίησα το CI/CD starter σε production μέσα σε ένα απόγευμα. Δεν περίμενα να δουλέψει τόσο καθαρά."</p>
+          <div class="testimonial-author">
+            <div class="avatar">ΝΠ</div>
+            <div>
+              <div class="author-name">Νίκος Π.</div>
+              <div class="author-role">Senior Software Engineer</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p>"Σαν junior, τα videos για git και terminal μου γλίτωσαν αμέτρητες ώρες frustration."</p>
+          <div class="testimonial-author">
+            <div class="avatar">ΕΔ</div>
+            <div>
+              <div class="author-name">Ελένη Δ.</div>
+              <div class="author-role">Junior Developer</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-avatar" aria-hidden="true">Γ</div>
+        <div class="about-text">
+          <p class="eyebrow">Σχετικά</p>
+          <h2>Γεια, είμαι ο Γιάννης.</h2>
+          <p>Backend engineer από την Ελλάδα. Φτιάχνω το Texnologia γιατί ήθελα το tech content που έλειπε όταν ξεκινούσα — στα ελληνικά, πρακτικό, χωρίς φλυαρία.</p>
+          <ul class="about-bullets">
+            <li>Backend engineer, εστιασμένος σε distributed systems</li>
+            <li>Δημιουργός του Texnologia podcast &amp; YouTube channel</li>
+            <li>Γράφω templates και checklists που χρησιμοποιώ ο ίδιος σε production</li>
+            <li>Πιστεύω ότι τα πολύπλοκα πράγματα εξηγούνται απλά</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Newsletter -->
+  <section class="cta-band" id="newsletter">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2>Μείνε ενημερωμένος</h2>
+          <p>Ένα email τη βδομάδα με νέο επεισόδιο, video ή template. Χωρίς spam.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <label for="newsletterEmail" class="sr-only" style="position:absolute;left:-9999px;">Email</label>
+          <input type="email" id="newsletterEmail" placeholder="το email σου" required>
+          <button type="submit" class="btn btn-primary">Εγγραφή</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Επικοινωνία</p>
+        <h2>Πες μου κάτι</h2>
+        <p>Ιδέες για επεισόδιο, feedback, ή απλά ένα γεια — απαντάω σε όλα.</p>
+      </div>
+
+      <div class="contact-inner">
+        <form id="contactForm" novalidate>
+          <div class="form-field" id="field-name">
+            <label for="contactName">Όνομα</label>
+            <input type="text" id="contactName" name="name" autocomplete="name">
+            <p class="form-error">Συμπλήρωσε το όνομά σου.</p>
+          </div>
+          <div class="form-field" id="field-email">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" autocomplete="email">
+            <p class="form-error">Βάλε ένα έγκυρο email.</p>
+          </div>
+          <div class="form-field" id="field-message">
+            <label for="contactMessage">Μήνυμα</label>
+            <textarea id="contactMessage" name="message" rows="5"></textarea>
+            <p class="form-error">Γράψε ένα μήνυμα (τουλάχιστον 10 χαρακτήρες).</p>
+          </div>
+          <button type="submit" class="btn btn-primary">Στείλε μήνυμα</button>
+          <div class="form-status" id="formStatus" role="status"></div>
+        </form>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-info-label mono">Email</div>
+            <a class="contact-info-value" href="mailto:hello@texnologia.dev">hello@texnologia.dev</a>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label mono">YouTube</div>
+            <a class="contact-info-value" href="https://youtube.com" target="_blank" rel="noopener">youtube.com/@texnologia</a>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label mono">Podcast</div>
+            <a class="contact-info-value" href="#catalog">Άκουσε στο Spotify / Apple Podcasts</a>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label mono">LinkedIn</div>
+            <a class="contact-info-value" href="https://linkedin.com" target="_blank" rel="noopener">linkedin.com/in/giannis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <span class="logo-mark">TX</span>
+          Texnologia
+        </a>
+        <p>Podcast, videos &amp; templates για μηχανικούς λογισμικού. Ελληνικό tech content, δωρεάν.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Περιεχόμενο</h4>
+          <ul>
+            <li><a href="#categories">Κατηγορίες</a></li>
+            <li><a href="#catalog">Κατάλογος</a></li>
+            <li><a href="#tracker">Progress Tracker</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="#about">Σχετικά</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Επικοινωνία</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Texnologia. Με MIT License.</p>
+      <div class="socials">
+        <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JohnVogg" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
