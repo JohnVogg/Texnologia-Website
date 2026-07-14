@@ -5,35 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ioannis Vongelis - Digital Transformation</title>
 <meta name="description" content="Podcast, videos και templates για μηχανικούς λογισμικού από τον Ioannis Vongelis. Ελληνικό tech content, δωρεάν.">
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind-config.js"></script>
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-behavior: smooth; }
+    body { @apply font-sans text-ink bg-white antialiased; }
+  }
+  @layer components {
+    .container { @apply w-full max-w-[1120px] mx-auto px-6; }
+    .eyebrow { @apply font-mono text-[13px] font-medium tracking-wide uppercase text-blue mb-3; }
+    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition-colors hover:bg-blue-dark whitespace-nowrap; }
+    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition-colors hover:border-ink-2 whitespace-nowrap; }
+    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition-colors hover:bg-blue-bg whitespace-nowrap; }
+    .btn-sm { @apply px-4 py-2 text-[13px]; }
+    .tag { @apply font-mono text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-md; }
+    .tag-red { @apply bg-red-bg text-red; }
+    .tag-blue { @apply bg-blue-bg text-blue; }
+    .tag-green { @apply bg-green-bg text-green; }
+    .tag-neutral { @apply bg-paper text-muted border border-line; }
+  }
+</style>
 </head>
 <body>
 
 
-<header class="navbar" id="navbar">
+<header id="navbar" class="sticky top-0 z-[100] py-4">
   <div class="container">
-    <div class="navbar-inner">
-      <a href="#top" class="logo">
-        Ioannis Vongelis
-      </a>
+    <div class="relative">
+      <div class="h-16 flex items-center justify-between gap-4 bg-white/90 backdrop-blur-md border border-line rounded-full pl-[22px] pr-2.5 shadow-card">
+        <a href="#top" class="flex items-center gap-2 font-mono text-lg font-semibold shrink-0">
+          Ioannis Vongelis
+        </a>
 
-      <nav class="nav-links" aria-label="Κύρια πλοήγηση">
-        <a href="#podcast">Podcast</a>
-        <a href="#templates">Templates</a>
-        <a href="#videos">Videos</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="about.html">Σχετικά</a>
-      </nav>
+        <nav class="hidden md:flex items-center justify-center gap-8 flex-1" aria-label="Κύρια πλοήγηση">
+          <a href="#podcast" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
+          <a href="#templates" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
+          <a href="#videos" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
+          <a href="portfolio.html" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
+          <a href="about.html" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+        </nav>
 
-      <div class="nav-right">
-        <a href="about.html" class="btn btn-primary btn-sm">
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="about.html" class="btn-primary btn-sm hidden md:inline-flex">
+            Επικοινωνία
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
+          </a>
+          <button class="md:hidden flex flex-col gap-1 p-2" id="navToggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="navLinksMobile">
+            <span class="w-[22px] h-0.5 bg-ink transition-all duration-150"></span>
+            <span class="w-[22px] h-0.5 bg-ink transition-all duration-150"></span>
+            <span class="w-[22px] h-0.5 bg-ink transition-all duration-150"></span>
+          </button>
+        </div>
+      </div>
+
+      <nav id="navLinksMobile" class="hidden md:hidden flex-col gap-1 absolute left-0 right-0 top-[96px] bg-white border border-line rounded-2xl shadow-card p-6 z-40" aria-label="Κύρια πλοήγηση (mobile)">
+        <a href="#podcast" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
+        <a href="#templates" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
+        <a href="#videos" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
+        <a href="portfolio.html" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
+        <a href="about.html" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+        <a href="about.html" class="btn-primary btn-sm mt-2 w-full">
           Επικοινωνία
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
         </a>
-        <button class="nav-toggle" id="navToggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="navLinks">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      </nav>
     </div>
   </div>
 </header>
@@ -41,47 +79,47 @@
 <main id="top">
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="pt-[80px] md:pt-28 pb-[72px] md:pb-[104px] bg-gradient-to-br from-[#EEF3FA] via-[#F8FAFC] to-white border-b border-line">
     <div class="container">
-      <div class="hero-card">
-        <div class="hero-client-cta">
-          <p>Χρειάζεσαι <span class="text-blue">website</span> ή <span class="text-blue">εφαρμογή</span> για την επιχείρησή σου, για τον εαυτό σου; Επικοινώνησε μαζί μου για να το φτιάξουμε μαζί με την ομάδα μου.</p>
-          <a href="about.html" class="btn btn-primary btn-sm">Κλείσε συνάντηση</a>
+      <div class="max-w-[860px] mx-auto bg-white border border-line rounded-[20px] shadow-card px-6 sm:px-12 py-9 sm:py-14 text-center">
+        <div class="flex items-center justify-center gap-5 flex-wrap flex-col text-center mb-8 pb-6 border-b border-dashed border-line">
+          <p class="m-0 text-sm text-muted max-w-[420px] text-center">Χρειάζεσαι <span class="text-blue font-semibold">website</span> ή <span class="text-blue font-semibold">εφαρμογή</span> για την επιχείρησή σου, για τον εαυτό σου; Επικοινώνησε μαζί μου για να το φτιάξουμε μαζί με την ομάδα μου.</p>
+          <a href="about.html" class="btn-primary btn-sm">Κλείσε συνάντηση</a>
         </div>
 
-        <div class="hero-badges">
-          <span class="badge-label">Ελληνικό tech content</span>
-          <span class="badge-highlight">software engineering</span>
+        <div class="inline-flex items-center gap-3 pl-4 pr-1.5 py-1.5 border border-line rounded-full mb-6 font-mono text-xs font-medium">
+          <span class="text-muted uppercase tracking-wide">Ελληνικό tech content</span>
+          <span class="text-blue bg-blue-bg px-3.5 py-1.5 rounded-full">software engineering</span>
         </div>
-        <h1>Ξεχώρισε στο τεχνολογικό χώρο, <span class="text-gradient">βήμα βήμα</span></h1>
-        <p>Podcast, videos, templates, startup lessons για developers που θέλουν να χτίσουν, να μάθουν system design και να προχωρήσουν στην καριέρα τους.</p>
-        <div class="hero-actions">
-          <a href="#podcast" class="btn btn-primary">
+        <h1 class="text-[32px] sm:text-[52px] leading-[1.15] mx-auto mb-5 max-w-[720px]">Ξεχώρισε στο τεχνολογικό χώρο, <span class="bg-gradient-to-r from-blue to-[#4C8DFF] bg-clip-text text-transparent">βήμα βήμα</span></h1>
+        <p class="text-lg text-ink-2 mx-auto mb-8 max-w-[560px]">Podcast, videos, templates, startup lessons για developers που θέλουν να χτίσουν, να μάθουν system design και να προχωρήσουν στην καριέρα τους.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3 mb-12">
+          <a href="#podcast" class="btn-primary justify-center">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
             Texnologia
           </a>
-          <a href="#templates" class="btn btn-secondary">
+          <a href="#templates" class="btn-secondary justify-center">
             Templates
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 16 5 9l1.4-1.4L12 13.2l5.6-5.6L19 9z"/></svg>
           </a>
         </div>
 
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-value">5+</div>
-            <div class="stat-label">Websites</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 border-t border-line pt-8">
+          <div>
+            <div class="font-mono text-[28px] font-semibold text-blue">5+</div>
+            <div class="text-[13px] text-muted mt-1 uppercase tracking-wide">Websites</div>
           </div>
-          <div class="stat">
-            <div class="stat-value">6</div>
-            <div class="stat-label">templates</div>
+          <div>
+            <div class="font-mono text-[28px] font-semibold text-blue">6</div>
+            <div class="text-[13px] text-muted mt-1 uppercase tracking-wide">templates</div>
           </div>
-          <div class="stat">
-            <div class="stat-value">2+</div>
-            <div class="stat-label">apps</div>
+          <div>
+            <div class="font-mono text-[28px] font-semibold text-blue">2+</div>
+            <div class="text-[13px] text-muted mt-1 uppercase tracking-wide">apps</div>
           </div>
-          <div class="stat">
-            <div class="stat-value">>50</div>
-            <div class="stat-label">συνδρομητές</div>
+          <div>
+            <div class="font-mono text-[28px] font-semibold text-blue">&gt;50</div>
+            <div class="text-[13px] text-muted mt-1 uppercase tracking-wide">συνδρομητές</div>
           </div>
         </div>
       </div>
@@ -89,70 +127,70 @@
   </section>
 
   <!-- Trusted by -->
-  <section class="section-alt" id="trusted-by">
+  <section class="bg-paper border-y border-line py-[72px] md:py-[104px]" id="trusted-by">
     <div class="container">
-      <div class="section-head section-head-center">
+      <div class="max-w-[640px] mb-8 mx-auto text-center">
         <p class="eyebrow">Trusted by</p>
       </div>
 
-      <div class="trusted-logos">
-        <div class="trusted-logo"><img src="photos/piraeuslogo-removebg-preview.png" alt="Τράπεζα Πειραιώς"></div>
-        <div class="trusted-logo"><img src="photos/tedxmavilisquare-removebg-preview.png" alt="TEDx Mavili Square"></div>
-        <div class="trusted-logo"><img src="photos/unimates.svg" alt="Unimates"></div>
-        <div class="trusted-logo"><img src="photos/pos4work-removebg-preview.png" alt="POS4Work"></div>
-        <div class="trusted-logo"><img src="photos/hustlehours-removebg-preview.png" alt="Hustle Hours"></div>
-        <div class="trusted-logo"><img src="photos/mantislogo-removebg-preview.png" alt="Mantis Beyond Innovation"></div>
-        <div class="trusted-logo"><img src="photos/moke.png" alt="MOKE UoI"></div>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/piraeuslogo-removebg-preview.png" alt="Τράπεζα Πειραιώς"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/tedxmavilisquare-removebg-preview.png" alt="TEDx Mavili Square"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/unimates.svg" alt="Unimates"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/pos4work-removebg-preview.png" alt="POS4Work"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/hustlehours-removebg-preview.png" alt="Hustle Hours"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/mantislogo-removebg-preview.png" alt="Mantis Beyond Innovation"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/moke.png" alt="MOKE UoI"></div>
       </div>
     </div>
   </section>
 
   <!-- Podcast -->
-  <section id="podcast">
+  <section class="py-[72px] md:py-[104px]" id="podcast">
     <div class="container">
-      <div class="section-head">
+      <div class="max-w-[640px] mb-12">
         <p class="eyebrow">Podcast</p>
-        <h2>Πρόσφατα επεισόδια</h2>
-        <p>Γεφυρώνοντας το χάσμα ανάμεσα στην έρευνα και στην επιχειρηματικότητα.</p>
+        <h2 class="text-[32px] mb-3">Πρόσφατα επεισόδια</h2>
+        <p class="text-muted text-base m-0">Γεφυρώνοντας το χάσμα ανάμεσα στην έρευνα και στην επιχειρηματικότητα.</p>
       </div>
 
-      <div class="media-carousel">
-        <button type="button" class="carousel-arrow carousel-arrow-prev" id="podcastPrev" aria-label="Προηγούμενο επεισόδιο">
+      <div class="flex items-center gap-2 sm:gap-4">
+        <button type="button" class="shrink-0 w-11 h-11 rounded-full border border-line bg-white text-ink flex items-center justify-center text-lg transition-colors enabled:hover:border-blue enabled:hover:text-blue disabled:opacity-35" id="podcastPrev" aria-label="Προηγούμενο επεισόδιο">
           <span aria-hidden="true">←</span>
         </button>
 
-        <div class="carousel-viewport">
-          <div class="carousel-track" id="podcastTrack">
-            <article class="media-slide">
-              <div class="media-video" data-video-id="bmUr1ywkEyI">
-                <img src="https://i.ytimg.com/vi/bmUr1ywkEyI/hqdefault.jpg" alt="Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis" loading="lazy">
-                <button type="button" class="media-play" aria-label="Αναπαραγωγή: Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis">
+        <div class="flex-1 overflow-hidden">
+          <div class="flex transition-transform duration-300 touch-pan-y" id="podcastTrack">
+            <article class="shrink-0 grow-0 basis-full w-full">
+              <div class="relative w-full aspect-video rounded-[10px] overflow-hidden bg-ink border border-line shadow-card" data-video-id="bmUr1ywkEyI">
+                <img class="w-full h-full object-cover border-0 block" src="https://i.ytimg.com/vi/bmUr1ywkEyI/hqdefault.jpg" alt="Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis" loading="lazy">
+                <button type="button" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[rgba(12,24,38,0.75)] text-white border-none flex items-center justify-center transition hover:bg-blue hover:scale-105" aria-label="Αναπαραγωγή: Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                 </button>
               </div>
-              <div class="media-slide-meta">
-                <div class="list-item-title">Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis</div>
-                <div class="list-item-meta mono">Texnologia</div>
+              <div class="pt-4">
+                <div class="font-medium text-[15px] mb-1">Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis</div>
+                <div class="font-mono text-[13px] text-muted">Texnologia</div>
               </div>
             </article>
           </div>
         </div>
 
-        <button type="button" class="carousel-arrow carousel-arrow-next" id="podcastNext" aria-label="Επόμενο επεισόδιο">
+        <button type="button" class="shrink-0 w-11 h-11 rounded-full border border-line bg-white text-ink flex items-center justify-center text-lg transition-colors enabled:hover:border-blue enabled:hover:text-blue disabled:opacity-35" id="podcastNext" aria-label="Επόμενο επεισόδιο">
           <span aria-hidden="true">→</span>
         </button>
       </div>
 
-      <div class="podcast-links">
-        <a class="podcast-link" href="https://www.youtube.com/@IoannisVongelis/podcasts" target="_blank" rel="noopener">
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg transition-colors" href="https://www.youtube.com/@IoannisVongelis/podcasts" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
           YouTube
         </a>
-        <a class="podcast-link" href="https://open.spotify.com/show/033Gl7QVgLxrFkmIfz48To" target="_blank" rel="noopener">
+        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg transition-colors" href="https://open.spotify.com/show/033Gl7QVgLxrFkmIfz48To" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24Zm5.5 17.3a.75.75 0 0 1-1 .26c-2.8-1.7-6.3-2.1-10.4-1.1a.75.75 0 1 1-.35-1.46c4.5-1.06 8.4-.6 11.5 1.3.36.22.48.7.25 1Zm1.47-3.27a.94.94 0 0 1-1.28.31c-3.2-2-8.1-2.55-11.9-1.4a.94.94 0 1 1-.55-1.8c4.3-1.3 9.7-.7 13.4 1.6.44.27.58.85.33 1.29Zm.13-3.4C15.7 8.2 9 8 5.2 9.14a1.13 1.13 0 1 1-.66-2.16c4.4-1.33 11.8-1.08 16.4 1.65a1.13 1.13 0 0 1-1.14 1.95Z"/></svg>
           Spotify
         </a>
-        <a class="podcast-link" href="https://podcasts.apple.com/gr/podcast/texnologia/id6785920594" target="_blank" rel="noopener">
+        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg transition-colors" href="https://podcasts.apple.com/gr/podcast/texnologia/id6785920594" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm.007 3.758c1.097 0 1.985.89 1.985 1.987v.802c0 1.097-.888 1.987-1.985 1.987-1.098 0-1.987-.89-1.987-1.987v-.802c0-1.098.89-1.987 1.987-1.987ZM8.323 9.334c.826 0 1.495.67 1.495 1.495v2.958c0 .824-.67 1.495-1.495 1.495-.823 0-1.493-.67-1.493-1.495v-2.958c0-.824.67-1.495 1.493-1.495Zm7.362 0c.824 0 1.495.67 1.495 1.495v2.958c0 .824-.67 1.495-1.495 1.495-.823 0-1.494-.67-1.494-1.495v-2.958c0-.824.67-1.495 1.494-1.495ZM12.007 16.076c1.136 0 2.058.922 2.058 2.058v.696c0 1.137-.922 2.058-2.058 2.058-1.135 0-2.057-.921-2.057-2.058v-.696c0-1.136.922-2.058 2.057-2.058Z"/></svg>
           Apple Podcasts
         </a>
@@ -161,129 +199,126 @@
   </section>
 
   <!-- Templates -->
-  <section class="section-alt" id="templates">
+  <section class="bg-paper border-y border-line py-[72px] md:py-[104px]" id="templates">
     <div class="container">
-      <div class="section-head">
+      <div class="max-w-[640px] mb-12">
         <p class="eyebrow">Templates</p>
-        <h2>Έτοιμα starters</h2>
-        <p>Configs και checklists που χρησιμοποιώ ο ίδιος σε production.</p>
+        <h2 class="text-[32px] mb-3">Έτοιμα starters</h2>
+        <p class="text-muted text-base m-0">Configs και checklists που χρησιμοποιώ ο ίδιος σε production.</p>
       </div>
 
-      <div class="template-cards">
-        <article class="template-card">
-          <div class="template-card-tags">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card">
+          <div class="flex flex-wrap gap-2 mb-4">
             <span class="tag tag-red">TEMPLATE 01 · YAML</span>
             <span class="tag tag-neutral">GITHUB ACTIONS</span>
           </div>
-          <h3>CI/CD starter</h3>
-          <p>Ένα πλήρες pipeline για build, test και deploy με Docker. Το ίδιο setup που τρέχω σε production, έτοιμο να το κάνεις copy-paste.</p>
-          <div class="template-card-footer">
-            <button type="button" class="template-card-link">Download <span aria-hidden="true">→</span></button>
+          <h3 class="text-[19px] mb-2.5">CI/CD starter</h3>
+          <p class="text-ink-2 text-sm mb-6 flex-grow">Ένα πλήρες pipeline για build, test και deploy με Docker. Το ίδιο setup που τρέχω σε production, έτοιμο να το κάνεις copy-paste.</p>
+          <div class="pt-5 border-t border-dashed border-line">
+            <button type="button" class="inline-flex items-center gap-2 bg-transparent border-none p-0 font-mono text-xs font-semibold tracking-wide uppercase text-ink hover:text-blue transition-colors">Download <span aria-hidden="true">→</span></button>
           </div>
         </article>
 
-        <article class="template-card">
-          <div class="template-card-tags">
+        <article class="flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card">
+          <div class="flex flex-wrap gap-2 mb-4">
             <span class="tag tag-blue">TEMPLATE 02 · REPO</span>
             <span class="tag tag-neutral">FULL-STACK</span>
           </div>
-          <h3>Next.js + Supabase starter</h3>
-          <p>Auth, database και storage στημένα εξ αρχής. Ξεκίνα το επόμενο project σου χωρίς να ξαναγράψεις το ίδιο boilerplate.</p>
-          <div class="template-card-footer">
-            <button type="button" class="template-card-link">Download <span aria-hidden="true">→</span></button>
+          <h3 class="text-[19px] mb-2.5">Next.js + Supabase starter</h3>
+          <p class="text-ink-2 text-sm mb-6 flex-grow">Auth, database και storage στημένα εξ αρχής. Ξεκίνα το επόμενο project σου χωρίς να ξαναγράψεις το ίδιο boilerplate.</p>
+          <div class="pt-5 border-t border-dashed border-line">
+            <button type="button" class="inline-flex items-center gap-2 bg-transparent border-none p-0 font-mono text-xs font-semibold tracking-wide uppercase text-ink hover:text-blue transition-colors">Download <span aria-hidden="true">→</span></button>
           </div>
         </article>
 
-        <article class="template-card">
-          <div class="template-card-tags">
+        <article class="flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card">
+          <div class="flex flex-wrap gap-2 mb-4">
             <span class="tag tag-green">TEMPLATE 03 · MD</span>
             <span class="tag tag-neutral">CHECKLIST</span>
           </div>
-          <h3>Production checklist</h3>
-          <p>Ό,τι ελέγχω πριν βγάλω κάτι live: monitoring, rollback plan, security, performance. Markdown, έτοιμο για το repo σου.</p>
-          <div class="template-card-footer">
-            <button type="button" class="template-card-link">Download <span aria-hidden="true">→</span></button>
+          <h3 class="text-[19px] mb-2.5">Production checklist</h3>
+          <p class="text-ink-2 text-sm mb-6 flex-grow">Ό,τι ελέγχω πριν βγάλω κάτι live: monitoring, rollback plan, security, performance. Markdown, έτοιμο για το repo σου.</p>
+          <div class="pt-5 border-t border-dashed border-line">
+            <button type="button" class="inline-flex items-center gap-2 bg-transparent border-none p-0 font-mono text-xs font-semibold tracking-wide uppercase text-ink hover:text-blue transition-colors">Download <span aria-hidden="true">→</span></button>
           </div>
         </article>
-
-    
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials">
+  <section class="py-[72px] md:py-[104px]" id="testimonials">
     <div class="container">
-      <div class="section-head section-head-center">
+      <div class="max-w-[640px] mb-12 mx-auto text-center">
         <p class="eyebrow">Testimonials</p>
       </div>
-
     </div>
 
-    <div class="testimonials-marquee">
-      <div class="testimonials-track">
-        <article class="testimonial">
-          <p>"Το system design επεισόδιο μου "ξεκαθάρισε" κάτι που είχα μπλοκάρει μήνες."</p>
-          <div class="testimonial-author">
-            <div class="avatar">ΓΠ</div>
+    <div class="overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)] [-webkit-mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
+      <div class="flex gap-6 w-max px-6 animate-marquee hover:[animation-play-state:paused]">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
+          <p class="text-[15px] text-ink-2 mb-6">"Το system design επεισόδιο μου "ξεκαθάρισε" κάτι που είχα μπλοκάρει μήνες."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΓΠ</div>
             <div>
-              <div class="author-name">Γιώργος Π.</div>
-              <div class="author-role">ECE student</div>
+              <div class="text-sm font-medium">Γιώργος Π.</div>
+              <div class="text-[13px] text-muted">ECE student</div>
             </div>
           </div>
         </article>
 
-        <article class="testimonial">
-          <p>"Οι γνώσεις που δίνει χρησιμοποιούνται στην αγορά εργασίας και στις επιχειρήσεις."</p>
-          <div class="testimonial-author">
-            <div class="avatar">ΘΓ</div>
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
+          <p class="text-[15px] text-ink-2 mb-6">"Οι γνώσεις που δίνει χρησιμοποιούνται στην αγορά εργασίας και στις επιχειρήσεις."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΘΓ</div>
             <div>
-              <div class="author-name">Θανάσης Γ.</div>
-              <div class="author-role">Junior Software Engineer</div>
+              <div class="text-sm font-medium">Θανάσης Γ.</div>
+              <div class="text-[13px] text-muted">Junior Software Engineer</div>
             </div>
           </div>
         </article>
 
-        <article class="testimonial">
-          <p>"Τα templates σου εξηγούν βήμα βήμα τα επόμενα βήματα και περιέχουν παραδείγματα ενδιάμεσα στα βήματα"</p>
-          <div class="testimonial-author">
-            <div class="avatar">ΕΔ</div>
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
+          <p class="text-[15px] text-ink-2 mb-6">"Τα templates σου εξηγούν βήμα βήμα τα επόμενα βήματα και περιέχουν παραδείγματα ενδιάμεσα στα βήματα"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΕΔ</div>
             <div>
-              <div class="author-name">Ελένη Δ.</div>
-              <div class="author-role">Freelancer</div>
+              <div class="text-sm font-medium">Ελένη Δ.</div>
+              <div class="text-[13px] text-muted">Freelancer</div>
             </div>
           </div>
         </article>
 
-        <article class="testimonial" aria-hidden="true">
-          <p>"Το system design επεισόδιο μου "ξεκαθάρισε" κάτι που είχα μπλοκάρει μήνες."</p>
-          <div class="testimonial-author">
-            <div class="avatar">ΓΠ</div>
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
+          <p class="text-[15px] text-ink-2 mb-6">"Το system design επεισόδιο μου "ξεκαθάρισε" κάτι που είχα μπλοκάρει μήνες."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΓΠ</div>
             <div>
-              <div class="author-name">Γιώργος Π.</div>
-              <div class="author-role">ECE student</div>
+              <div class="text-sm font-medium">Γιώργος Π.</div>
+              <div class="text-[13px] text-muted">ECE student</div>
             </div>
           </div>
         </article>
 
-        <article class="testimonial" aria-hidden="true">
-          <p>"Οι γνώσεις που δίνει χρησιμοποιούνται στην αγορά εργασίας και στις επιχειρήσεις."</p>
-          <div class="testimonial-author">
-            <div class="avatar">ΘΓ</div>
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
+          <p class="text-[15px] text-ink-2 mb-6">"Οι γνώσεις που δίνει χρησιμοποιούνται στην αγορά εργασίας και στις επιχειρήσεις."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΘΓ</div>
             <div>
-              <div class="author-name">Θανάσης Γ.</div>
-              <div class="author-role">Junior Software Engineer</div>
+              <div class="text-sm font-medium">Θανάσης Γ.</div>
+              <div class="text-[13px] text-muted">Junior Software Engineer</div>
             </div>
           </div>
         </article>
 
-        <article class="testimonial" aria-hidden="true">
-          <p>"Τα templates σου εξηγούν βήμα βήμα τα επόμενα βήματα και περιέχουν παραδείγματα ενδιάμεσα στα βήματα"</p>
-          <div class="testimonial-author">
-            <div class="avatar">ΕΔ</div>
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
+          <p class="text-[15px] text-ink-2 mb-6">"Τα templates σου εξηγούν βήμα βήμα τα επόμενα βήματα και περιέχουν παραδείγματα ενδιάμεσα στα βήματα"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΕΔ</div>
             <div>
-              <div class="author-name">Ελένη Δ.</div>
-              <div class="author-role">Freelancer</div>
+              <div class="text-sm font-medium">Ελένη Δ.</div>
+              <div class="text-[13px] text-muted">Freelancer</div>
             </div>
           </div>
         </article>
@@ -292,37 +327,37 @@
   </section>
 
   <!-- Videos -->
-  <section id="videos">
+  <section class="py-[72px] md:py-[104px]" id="videos">
     <div class="container">
-      <div class="section-head">
+      <div class="max-w-[640px] mb-12">
         <p class="eyebrow">Videos</p>
-        <h2>Πρόσφατες Playlists</h2>
-        <p>Πρακτικά videos για startups, workflows και βαθιά technical dives.</p>
+        <h2 class="text-[32px] mb-3">Πρόσφατες Playlists</h2>
+        <p class="text-muted text-base m-0">Πρακτικά videos για startups, workflows και βαθιά technical dives.</p>
       </div>
 
-      <div class="list-items">
-        <a class="list-item" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+      <div class="grid gap-3">
+        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <div>
-            <div class="list-item-title">Software Engineering</div>
+            <div class="font-medium text-[15px] mb-1">Software Engineering</div>
           </div>
-          <div class="list-item-meta mono">YouTube →</div>
+          <div class="font-mono text-[13px] text-muted">YouTube →</div>
         </a>
-        <a class="list-item" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <div>
-            <div class="list-item-title">Startup Lessons</div>
+            <div class="font-medium text-[15px] mb-1">Startup Lessons</div>
           </div>
-          <div class="list-item-meta mono">YouTube →</div>
+          <div class="font-mono text-[13px] text-muted">YouTube →</div>
         </a>
-        <a class="list-item" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <div>
-            <div class="list-item-title">AI fundametals</div>
+            <div class="font-medium text-[15px] mb-1">AI fundametals</div>
           </div>
-          <div class="list-item-meta mono">YouTube →</div>
+          <div class="font-mono text-[13px] text-muted">YouTube →</div>
         </a>
       </div>
 
-      <div class="podcast-links">
-        <a class="podcast-link" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg transition-colors" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
           YouTube
         </a>
@@ -332,56 +367,57 @@
 
 </main>
 
-<footer class="footer">
+<footer class="bg-paper border-t border-line text-ink-2 pt-16 pb-8">
   <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#top" class="logo">
+    <div class="flex justify-between gap-12 mb-10 flex-wrap">
+      <div>
+        <a href="#top" class="flex items-center gap-2 font-mono text-lg font-semibold text-ink">
           Ioannis Vongelis
         </a>
-        <div class="footer-col footer-contact">
-          <h4>Επικοινωνία</h4>
-          <ul>
-            <li><a href="mailto:contact@vongelis.net">contact@vongelis.net</a></li>
+        <div class="mt-7">
+          <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-0">Επικοινωνία</h4>
+          <ul class="grid gap-2.5 mt-4">
+            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="mailto:contact@vongelis.net">contact@vongelis.net</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Περιεχόμενο</h4>
-          <ul>
-            <li><a href="#podcast">Podcast</a></li>
-            <li><a href="#templates">Templates</a></li>
-            <li><a href="#videos">Videos</a></li>
+      <div class="flex gap-16 flex-wrap">
+        <div>
+          <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-4">Περιεχόμενο</h4>
+          <ul class="grid gap-2.5">
+            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="#podcast">Podcast</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="#templates">Templates</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="#videos">Videos</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Site</h4>
-          <ul>
-            <li><a href="about.html">Σχετικά</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+        <div>
+          <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-4">Site</h4>
+          <ul class="grid gap-2.5">
+            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="about.html">Σχετικά</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="portfolio.html">Portfolio</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="#testimonials">Κριτικές</a></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div class="socials">
-        <a href="https://www.youtube.com/@IoannisVongelis" target="_blank" rel="noopener" aria-label="YouTube">
+    <div class="flex flex-col items-center gap-5 pt-8 border-t border-line">
+      <div class="flex gap-3">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://www.youtube.com/@IoannisVongelis" target="_blank" rel="noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </a>
-        <a href="https://github.com/JohnVogg" target="_blank" rel="noopener" aria-label="GitHub">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://github.com/JohnVogg" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </a>
-        <a href="mailto:contact@vongelis.net" aria-label="Email">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="mailto:contact@vongelis.net" aria-label="Email">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M2 4h20v16H2V4zm2 2.236V6h.01L12 12.5l7.99-6.5H20v.236l-8 6.507-8-6.507zM4 8.605V18h16V8.605l-7.375 6a1 1 0 0 1-1.25 0L4 8.605z"/></svg>
         </a>
       </div>
-      <p>© 2026 Ioannis Vongelis</p>
+      <p class="text-[13px] text-muted m-0">© 2026 Ioannis Vongelis</p>
     </div>
   </div>
 </footer>
