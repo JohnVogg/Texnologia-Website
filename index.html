@@ -17,9 +17,9 @@
   @layer components {
     .container { @apply w-full max-w-[1120px] mx-auto px-6; }
     .eyebrow { @apply font-mono text-[13px] font-medium tracking-wide uppercase text-blue mb-3; }
-    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition-colors hover:bg-blue-dark whitespace-nowrap; }
-    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition-colors hover:border-ink-2 whitespace-nowrap; }
-    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition-colors hover:bg-blue-bg whitespace-nowrap; }
+    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition hover:bg-blue-dark hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
+    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition hover:border-ink-2 hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
+    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition hover:bg-blue-bg hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
     .btn-sm { @apply px-4 py-2 text-[13px]; }
     .tag { @apply font-mono text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-md; }
     .tag-red { @apply bg-red-bg text-red; }
@@ -41,16 +41,16 @@
         </a>
 
         <nav class="hidden md:flex items-center justify-center gap-8 flex-1" aria-label="Κύρια πλοήγηση">
-          <a href="#podcast" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
-          <a href="#templates" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
-          <a href="#videos" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
-          <a href="portfolio.html" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
-          <a href="about.html" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+          <a href="#podcast" data-section="podcast" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
+          <a href="#templates" data-section="templates" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
+          <a href="#videos" data-section="videos" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
+          <a href="portfolio.html" data-section="portfolio" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
+          <a href="about.html" data-section="about" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
         </nav>
 
         <div class="flex items-center gap-3 shrink-0">
           <a href="about.html" class="btn-primary btn-sm hidden md:inline-flex">
-            Επικοινωνία
+            Δούλεψε μαζί μου
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
           </a>
           <button class="md:hidden flex flex-col gap-1 p-2" id="navToggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="navLinksMobile">
@@ -62,13 +62,13 @@
       </div>
 
       <nav id="navLinksMobile" class="hidden md:hidden flex-col gap-1 absolute left-0 right-0 top-[96px] bg-white border border-line rounded-2xl shadow-card p-6 z-40" aria-label="Κύρια πλοήγηση (mobile)">
-        <a href="#podcast" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
-        <a href="#templates" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
-        <a href="#videos" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
-        <a href="portfolio.html" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
-        <a href="about.html" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+        <a href="#podcast" data-section="podcast" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
+        <a href="#templates" data-section="templates" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
+        <a href="#videos" data-section="videos" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
+        <a href="portfolio.html" data-section="portfolio" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
+        <a href="about.html" data-section="about" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
         <a href="about.html" class="btn-primary btn-sm mt-2 w-full">
-          Επικοινωνία
+          Δούλεψε μαζί μου
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
         </a>
       </nav>
@@ -106,19 +106,19 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 border-t border-line pt-8">
           <div>
-            <div class="font-mono text-[28px] font-semibold text-blue">5+</div>
+            <div class="font-mono text-[28px] font-semibold text-blue stat-value" data-target="5" data-suffix="+">0</div>
             <div class="text-[13px] text-muted mt-1 uppercase tracking-wide">Websites</div>
           </div>
           <div>
-            <div class="font-mono text-[28px] font-semibold text-blue">6</div>
+            <div class="font-mono text-[28px] font-semibold text-blue stat-value" data-target="6">0</div>
             <div class="text-[13px] text-muted mt-1 uppercase tracking-wide">templates</div>
           </div>
           <div>
-            <div class="font-mono text-[28px] font-semibold text-blue">2+</div>
+            <div class="font-mono text-[28px] font-semibold text-blue stat-value" data-target="2" data-suffix="+">0</div>
             <div class="text-[13px] text-muted mt-1 uppercase tracking-wide">apps</div>
           </div>
           <div>
-            <div class="font-mono text-[28px] font-semibold text-blue">&gt;50</div>
+            <div class="font-mono text-[28px] font-semibold text-blue stat-value" data-target="50" data-prefix="&gt;">0</div>
             <div class="text-[13px] text-muted mt-1 uppercase tracking-wide">συνδρομητές</div>
           </div>
         </div>
@@ -280,12 +280,12 @@
         </article>
 
         <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
-          <p class="text-[15px] text-ink-2 mb-6">"Τα templates σου εξηγούν βήμα βήμα τα επόμενα βήματα και περιέχουν παραδείγματα ενδιάμεσα στα βήματα"</p>
+          <p class="text-[15px] text-ink-2 mb-6">"Ο Γιάννης πρόσεξε τις λεπτομέρειες στο website που έφτιαξε για την επιχειρησή μου και για το συνεργάτη μου" </p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΕΔ</div>
             <div>
-              <div class="text-sm font-medium">Ελένη Δ.</div>
-              <div class="text-[13px] text-muted">Freelancer</div>
+              <div class="text-sm font-medium">Βασίλης Σ.</div>
+              <div class="text-[13px] text-muted">Business Owner</div>
             </div>
           </div>
         </article>

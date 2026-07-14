@@ -17,16 +17,16 @@
   @layer components {
     .container { @apply w-full max-w-[1120px] mx-auto px-6; }
     .eyebrow { @apply font-mono text-[13px] font-medium tracking-wide uppercase text-blue mb-3; }
-    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition-colors hover:bg-blue-dark whitespace-nowrap; }
-    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition-colors hover:border-ink-2 whitespace-nowrap; }
-    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition-colors hover:bg-blue-bg whitespace-nowrap; }
+    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition hover:bg-blue-dark hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
+    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition hover:border-ink-2 hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
+    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition hover:bg-blue-bg hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
     .btn-sm { @apply px-4 py-2 text-[13px]; }
     .tag { @apply font-mono text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-md; }
     .tag-red { @apply bg-red-bg text-red; }
     .tag-blue { @apply bg-blue-bg text-blue; }
     .tag-green { @apply bg-green-bg text-green; }
     .tag-neutral { @apply bg-paper text-muted border border-line; }
-    .project-card { @apply flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card; }
+    .project-card { @apply flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover; }
     .project-card-link { @apply inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-wide uppercase text-ink hover:text-blue transition-colors; }
   }
 </style>
@@ -43,16 +43,16 @@
         </a>
 
         <nav class="hidden md:flex items-center justify-center gap-8 flex-1" aria-label="Κύρια πλοήγηση">
-          <a href="index.html#podcast" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
-          <a href="index.html#templates" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
-          <a href="index.html#videos" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
-          <a href="portfolio.html" class="text-[15px] text-ink font-medium">Portfolio</a>
-          <a href="about.html" class="text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+          <a href="index.html#podcast" data-section="podcast" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
+          <a href="index.html#templates" data-section="templates" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
+          <a href="index.html#videos" data-section="videos" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
+          <a href="portfolio.html" data-section="portfolio" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
+          <a href="about.html" data-section="about" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
         </nav>
 
         <div class="flex items-center gap-3 shrink-0">
           <a href="about.html" class="btn-primary btn-sm hidden md:inline-flex">
-            Επικοινωνία
+            Δούλεψε μαζί μου
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
           </a>
           <button class="md:hidden flex flex-col gap-1 p-2" id="navToggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="navLinksMobile">
@@ -64,13 +64,13 @@
       </div>
 
       <nav id="navLinksMobile" class="hidden md:hidden flex-col gap-1 absolute left-0 right-0 top-[96px] bg-white border border-line rounded-2xl shadow-card p-6 z-40" aria-label="Κύρια πλοήγηση (mobile)">
-        <a href="index.html#podcast" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
-        <a href="index.html#templates" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
-        <a href="index.html#videos" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
-        <a href="portfolio.html" class="py-2.5 text-[15px] text-ink font-medium">Portfolio</a>
-        <a href="about.html" class="py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+        <a href="index.html#podcast" data-section="podcast" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
+        <a href="index.html#templates" data-section="templates" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
+        <a href="index.html#videos" data-section="videos" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
+        <a href="portfolio.html" data-section="portfolio" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
+        <a href="about.html" data-section="about" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
         <a href="about.html" class="btn-primary btn-sm mt-2 w-full">
-          Επικοινωνία
+          Δούλεψε μαζί μου
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
         </a>
       </nav>
@@ -86,28 +86,9 @@
       <div class="max-w-[620px] mx-auto bg-white border border-line rounded-[20px] shadow-card px-6 sm:px-12 py-9 sm:py-12 text-center">
         <p class="text-ink-2 text-lg mb-8">Η δουλειά που κάνω για πελάτες είναι εξίσου δική μου δουλειά     παραδίδω πάντα <span class="text-blue font-semibold">επαγγελματικά αποτελέσματα</span>, από το πρώτο commit μέχρι το production.</p>
         <a href="https://calendar.app.google/raDNaJriUPwDyRzHA" target="_blank" rel="noopener" class="btn-primary">
-          Επικοινωνία
+          Δούλεψε μαζί μου
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trusted by -->
-  <section class="bg-paper border-b border-line py-[64px] md:py-24" id="trusted-by">
-    <div class="container">
-      <div class="max-w-[640px] mb-8 mx-auto text-center">
-        <p class="eyebrow">Trusted by</p>
-      </div>
-
-      <div class="flex flex-wrap items-center justify-center gap-5">
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/piraeuslogo-removebg-preview.png" alt="Τράπεζα Πειραιώς"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/tedxmavilisquare-removebg-preview.png" alt="TEDx Mavili Square"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/unimates.svg" alt="Unimates"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/pos4work-removebg-preview.png" alt="POS4Work"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/hustlehours-removebg-preview.png" alt="Hustle Hours"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/mantislogo-removebg-preview.png" alt="Mantis Beyond Innovation"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/moke.png" alt="MOKE UoI"></div>
       </div>
     </div>
   </section>
@@ -191,85 +172,6 @@
         <a href="https://github.com/JohnVogg" class="btn-primary" target="_blank" rel="noopener">
           All projects
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="py-[72px] md:py-[104px]" id="testimonials">
-    <div class="container">
-      <div class="max-w-[640px] mb-12 mx-auto text-center">
-        <p class="eyebrow">Testimonials</p>
-      </div>
-    </div>
-
-    <div class="overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)] [-webkit-mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
-      <div class="flex gap-6 w-max px-6 animate-marquee hover:[animation-play-state:paused]">
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
-          <p class="text-[15px] text-ink-2 mb-6">"Το system design επεισόδιο μου "ξεκαθάρισε" κάτι που είχα μπλοκάρει μήνες."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΓΠ</div>
-            <div>
-              <div class="text-sm font-medium">Γιώργος Π.</div>
-              <div class="text-[13px] text-muted">ECE student</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
-          <p class="text-[15px] text-ink-2 mb-6">"Οι γνώσεις που δίνει χρησιμοποιούνται στην αγορά εργασίας και στις επιχειρήσεις."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΘΓ</div>
-            <div>
-              <div class="text-sm font-medium">Θανάσης Γ.</div>
-              <div class="text-[13px] text-muted">Junior Software Engineer</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
-          <p class="text-[15px] text-ink-2 mb-6">"Τα templates σου εξηγούν βήμα βήμα τα επόμενα βήματα και περιέχουν παραδείγματα ενδιάμεσα στα βήματα"</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΕΔ</div>
-            <div>
-              <div class="text-sm font-medium">Ελένη Δ.</div>
-              <div class="text-[13px] text-muted">Freelancer</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
-          <p class="text-[15px] text-ink-2 mb-6">"Το system design επεισόδιο μου "ξεκαθάρισε" κάτι που είχα μπλοκάρει μήνες."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΓΠ</div>
-            <div>
-              <div class="text-sm font-medium">Γιώργος Π.</div>
-              <div class="text-[13px] text-muted">ECE student</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
-          <p class="text-[15px] text-ink-2 mb-6">"Οι γνώσεις που δίνει χρησιμοποιούνται στην αγορά εργασίας και στις επιχειρήσεις."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΘΓ</div>
-            <div>
-              <div class="text-sm font-medium">Θανάσης Γ.</div>
-              <div class="text-[13px] text-muted">Junior Software Engineer</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
-          <p class="text-[15px] text-ink-2 mb-6">"Τα templates σου εξηγούν βήμα βήμα τα επόμενα βήματα και περιέχουν παραδείγματα ενδιάμεσα στα βήματα"</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΕΔ</div>
-            <div>
-              <div class="text-sm font-medium">Ελένη Δ.</div>
-              <div class="text-[13px] text-muted">Freelancer</div>
-            </div>
-          </div>
-        </article>
       </div>
     </div>
   </section>

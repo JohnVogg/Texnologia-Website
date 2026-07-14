@@ -30,6 +30,97 @@
     });
   }
 
+  // Active nav link highlighting
+  var navLinkEls = document.querySelectorAll('.nav-link');
+
+  if (navLinkEls.length) {
+    var setActiveNav = function (key) {
+      navLinkEls.forEach(function (link) {
+        var isActive = link.getAttribute('data-section') === key;
+        link.classList.toggle('text-ink', isActive);
+        link.classList.toggle('font-medium', isActive);
+        link.classList.toggle('text-ink-2', !isActive);
+      });
+    };
+
+    var currentPage = window.location.pathname.split('/').pop();
+
+    if (currentPage === 'about.html') {
+      setActiveNav('about');
+    } else if (currentPage === 'portfolio.html') {
+      setActiveNav('portfolio');
+    } else {
+      var spySections = ['podcast', 'templates', 'videos']
+        .map(function (id) { return document.getElementById(id); })
+        .filter(Boolean);
+
+      if (spySections.length && 'IntersectionObserver' in window) {
+        var sectionObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              setActiveNav(entry.target.id);
+            }
+          });
+        }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+        spySections.forEach(function (section) {
+          sectionObserver.observe(section);
+        });
+      }
+    }
+  }
+
+  // Animated stat counters
+  var statEls = document.querySelectorAll('.stat-value');
+
+  if (statEls.length) {
+    var statsAnimated = false;
+
+    function easeOutQuad(t) {
+      return t * (2 - t);
+    }
+
+    function animateStat(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1200;
+      var start = null;
+
+      function step(timestamp) {
+        if (start === null) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        el.textContent = prefix + Math.round(target * easeOutQuad(progress)) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    function animateStats() {
+      if (statsAnimated) return;
+      statsAnimated = true;
+      statEls.forEach(animateStat);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var statsObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateStats();
+            statsObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.4 });
+
+      statsObserver.observe(statEls[0].parentElement.parentElement);
+    } else {
+      animateStats();
+    }
+  }
+
   // Contact form validation
   var contactForm = document.getElementById('contactForm');
 
