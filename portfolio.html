@@ -18,9 +18,9 @@
   @layer components {
     .container { @apply w-full max-w-[1120px] mx-auto px-6; }
     .eyebrow { @apply font-mono text-[13px] font-medium tracking-wide uppercase text-blue mb-3; }
-    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition hover:bg-blue-dark hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
-    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition hover:border-ink-2 hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
-    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition hover:bg-blue-bg hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
+    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition hover:bg-blue-dark active:bg-blue-dark hover:-translate-y-0.5 active:-translate-y-0.5 hover:shadow-card-hover active:shadow-card-hover whitespace-nowrap; }
+    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition hover:border-ink-2 active:border-ink-2 hover:-translate-y-0.5 active:-translate-y-0.5 hover:shadow-card-hover active:shadow-card-hover whitespace-nowrap; }
+    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition hover:bg-blue-bg active:bg-blue-bg hover:-translate-y-0.5 active:-translate-y-0.5 hover:shadow-card-hover active:shadow-card-hover whitespace-nowrap; }
     .btn-sm { @apply px-4 py-2 text-[13px]; }
     .tag { @apply font-mono text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-md; }
     .tag-red { @apply bg-red-bg text-red; }
@@ -44,11 +44,11 @@
         </a>
 
         <nav class="hidden md:flex items-center justify-center gap-8 flex-1" aria-label="Κύρια πλοήγηση">
-          <a href="index.html#podcast" data-section="podcast" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
-          <a href="index.html#templates" data-section="templates" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
-          <a href="index.html#videos" data-section="videos" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
-          <a href="portfolio.html" data-section="portfolio" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
-          <a href="about.html" data-section="about" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+          <a href="index.html#podcast" data-section="podcast" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Podcast</a>
+          <a href="index.html#templates" data-section="templates" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Templates</a>
+          <a href="index.html#videos" data-section="videos" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Videos</a>
+          <a href="portfolio.html" data-section="portfolio" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Portfolio</a>
+          <a href="about.html" data-section="about" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Σχετικά</a>
         </nav>
 
         <div class="flex items-center gap-3 shrink-0">
@@ -65,11 +65,11 @@
       </div>
 
       <nav id="navLinksMobile" class="hidden md:hidden flex-col gap-1 absolute left-0 right-0 top-[96px] bg-white border border-line rounded-2xl shadow-card p-6 z-40" aria-label="Κύρια πλοήγηση (mobile)">
-        <a href="index.html#podcast" data-section="podcast" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
-        <a href="index.html#templates" data-section="templates" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
-        <a href="index.html#videos" data-section="videos" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
-        <a href="portfolio.html" data-section="portfolio" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
-        <a href="about.html" data-section="about" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+        <a href="index.html#podcast" data-section="podcast" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Podcast</a>
+        <a href="index.html#templates" data-section="templates" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Templates</a>
+        <a href="index.html#videos" data-section="videos" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Videos</a>
+        <a href="portfolio.html" data-section="portfolio" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Portfolio</a>
+        <a href="about.html" data-section="about" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Σχετικά</a>
         <a href="about.html" class="btn-primary btn-sm mt-2 w-full">
           Δούλεψε μαζί μου
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
@@ -258,7 +258,7 @@
         <div class="mt-7">
           <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-0">Επικοινωνία</h4>
           <ul class="grid gap-2.5 mt-4">
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="mailto:contact@vongelis.net">contact@vongelis.net</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="mailto:contact@vongelis.net">contact@vongelis.net</a></li>
           </ul>
         </div>
       </div>
@@ -267,17 +267,17 @@
         <div>
           <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-4">Περιεχόμενο</h4>
           <ul class="grid gap-2.5">
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="index.html#podcast">Podcast</a></li>
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="index.html#templates">Templates</a></li>
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="index.html#videos">Videos</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="index.html#podcast">Podcast</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="index.html#templates">Templates</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="index.html#videos">Videos</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-4">Site</h4>
           <ul class="grid gap-2.5">
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="about.html">Σχετικά</a></li>
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="portfolio.html">Portfolio</a></li>
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="index.html#testimonials">Κριτικές</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="about.html">Σχετικά</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="portfolio.html">Portfolio</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="index.html#testimonials">Κριτικές</a></li>
           </ul>
         </div>
       </div>
@@ -285,16 +285,16 @@
 
     <div class="flex flex-col items-center gap-5 pt-8 border-t border-line">
       <div class="flex gap-3">
-        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://www.youtube.com/@IoannisVongelis" target="_blank" rel="noopener" aria-label="YouTube">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue active:bg-blue hover:border-blue active:border-blue hover:text-white active:text-white transition-colors" href="https://www.youtube.com/@IoannisVongelis" target="_blank" rel="noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
         </a>
-        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue active:bg-blue hover:border-blue active:border-blue hover:text-white active:text-white transition-colors" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </a>
-        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://github.com/JohnVogg" target="_blank" rel="noopener" aria-label="GitHub">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue active:bg-blue hover:border-blue active:border-blue hover:text-white active:text-white transition-colors" href="https://github.com/JohnVogg" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </a>
-        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="mailto:contact@vongelis.net" aria-label="Email">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue active:bg-blue hover:border-blue active:border-blue hover:text-white active:text-white transition-colors" href="mailto:contact@vongelis.net" aria-label="Email">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M2 4h20v16H2V4zm2 2.236V6h.01L12 12.5l7.99-6.5H20v.236l-8 6.507-8-6.507zM4 8.605V18h16V8.605l-7.375 6a1 1 0 0 1-1.25 0L4 8.605z"/></svg>
         </a>
       </div>

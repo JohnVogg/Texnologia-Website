@@ -227,6 +227,102 @@
 
   initMediaCarousel('podcastTrack', 'podcastPrev', 'podcastNext');
 
+  // Template download gate (email capture -> Google Sheet -> direct PDF download)
+  var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiUfhyYrJIKHVBdAOuIf5rmFbU32M7J2P4YCCOPcBiTzp1P0ELSnWJtWNlFwvErhlH/exec';
+
+  var TEMPLATE_FILES = {
+    'beyond-code-guide': 'templates/beyond-code-guide.pdf',
+    'backend-odigos': 'templates/backend-odigos.pdf',
+    'praktiki-askisi-ellada-2026': 'templates/praktiki-askisi-ellada-2026.pdf',
+  };
+
+  var templateModal = document.getElementById('templateModal');
+
+  if (templateModal) {
+    var templateModalForm = document.getElementById('templateModalForm');
+    var templateModalEmail = document.getElementById('templateModalEmail');
+    var templateModalId = document.getElementById('templateModalId');
+    var templateModalStatus = document.getElementById('templateModalStatus');
+    var templateModalSubmit = document.getElementById('templateModalSubmit');
+    var templateModalClose = document.getElementById('templateModalClose');
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function openTemplateModal(templateId) {
+      templateModalId.value = templateId;
+      templateModalStatus.textContent = '';
+      templateModal.classList.remove('hidden');
+      templateModal.classList.add('flex');
+      templateModalEmail.focus();
+    }
+
+    function closeTemplateModal() {
+      templateModal.classList.add('hidden');
+      templateModal.classList.remove('flex');
+      templateModalForm.reset();
+      templateModalStatus.textContent = '';
+    }
+
+    document.querySelectorAll('.template-download-trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        openTemplateModal(trigger.getAttribute('data-template-id'));
+      });
+    });
+
+    templateModalClose.addEventListener('click', closeTemplateModal);
+
+    templateModal.addEventListener('click', function (e) {
+      if (e.target === templateModal) closeTemplateModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !templateModal.classList.contains('hidden')) closeTemplateModal();
+    });
+
+    templateModalForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var email = templateModalEmail.value.trim();
+      var fileUrl = TEMPLATE_FILES[templateModalId.value];
+
+      if (!emailPattern.test(email)) {
+        templateModalStatus.textContent = 'Δώσε ένα έγκυρο email.';
+        templateModalStatus.classList.add('text-red-600');
+        return;
+      }
+
+      if (!fileUrl) {
+        templateModalStatus.classList.add('text-red-600');
+        templateModalStatus.textContent = 'Κάτι πήγε στραβά, δοκίμασε ξανά.';
+        return;
+      }
+
+      templateModalStatus.classList.remove('text-red-600');
+      templateModalStatus.textContent = 'Στέλνεται...';
+      templateModalSubmit.disabled = true;
+
+      fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(templateModalForm) })
+        .then(function () {
+          templateModalStatus.textContent = 'Ευχαριστούμε! Η λήψη ξεκινάει...';
+
+          var link = document.createElement('a');
+          link.href = fileUrl;
+          link.download = fileUrl.split('/').pop();
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          setTimeout(closeTemplateModal, 1200);
+        })
+        .catch(function () {
+          templateModalStatus.classList.add('text-red-600');
+          templateModalStatus.textContent = 'Κάτι πήγε στραβά, δοκίμασε ξανά.';
+        })
+        .finally(function () {
+          templateModalSubmit.disabled = false;
+        });
+    });
+  }
+
   // Newsletter form (demo only)
   var newsletterForm = document.getElementById('newsletterForm');
 

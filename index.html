@@ -18,9 +18,9 @@
   @layer components {
     .container { @apply w-full max-w-[1120px] mx-auto px-6; }
     .eyebrow { @apply font-mono text-[13px] font-medium tracking-wide uppercase text-blue mb-3; }
-    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition hover:bg-blue-dark hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
-    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition hover:border-ink-2 hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
-    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition hover:bg-blue-bg hover:-translate-y-0.5 hover:shadow-card-hover whitespace-nowrap; }
+    .btn-primary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-blue text-white transition hover:bg-blue-dark active:bg-blue-dark hover:-translate-y-0.5 active:-translate-y-0.5 hover:shadow-card-hover active:shadow-card-hover whitespace-nowrap; }
+    .btn-secondary { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-ink border border-line transition hover:border-ink-2 active:border-ink-2 hover:-translate-y-0.5 active:-translate-y-0.5 hover:shadow-card-hover active:shadow-card-hover whitespace-nowrap; }
+    .btn-outline-blue { @apply inline-flex items-center justify-center gap-2 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue transition hover:bg-blue-bg active:bg-blue-bg hover:-translate-y-0.5 active:-translate-y-0.5 hover:shadow-card-hover active:shadow-card-hover whitespace-nowrap; }
     .btn-sm { @apply px-4 py-2 text-[13px]; }
     .tag { @apply font-mono text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-md; }
     .tag-red { @apply bg-red-bg text-red; }
@@ -42,11 +42,11 @@
         </a>
 
         <nav class="hidden md:flex items-center justify-center gap-8 flex-1" aria-label="Κύρια πλοήγηση">
-          <a href="#podcast" data-section="podcast" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
-          <a href="#templates" data-section="templates" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
-          <a href="#videos" data-section="videos" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
-          <a href="portfolio.html" data-section="portfolio" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
-          <a href="about.html" data-section="about" class="nav-link text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+          <a href="#podcast" data-section="podcast" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Podcast</a>
+          <a href="#templates" data-section="templates" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Templates</a>
+          <a href="#videos" data-section="videos" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Videos</a>
+          <a href="portfolio.html" data-section="portfolio" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Portfolio</a>
+          <a href="about.html" data-section="about" class="nav-link text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Σχετικά</a>
         </nav>
 
         <div class="flex items-center gap-3 shrink-0">
@@ -63,11 +63,11 @@
       </div>
 
       <nav id="navLinksMobile" class="hidden md:hidden flex-col gap-1 absolute left-0 right-0 top-[96px] bg-white border border-line rounded-2xl shadow-card p-6 z-40" aria-label="Κύρια πλοήγηση (mobile)">
-        <a href="#podcast" data-section="podcast" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Podcast</a>
-        <a href="#templates" data-section="templates" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Templates</a>
-        <a href="#videos" data-section="videos" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Videos</a>
-        <a href="portfolio.html" data-section="portfolio" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Portfolio</a>
-        <a href="about.html" data-section="about" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink transition-colors">Σχετικά</a>
+        <a href="#podcast" data-section="podcast" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Podcast</a>
+        <a href="#templates" data-section="templates" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Templates</a>
+        <a href="#videos" data-section="videos" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Videos</a>
+        <a href="portfolio.html" data-section="portfolio" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Portfolio</a>
+        <a href="about.html" data-section="about" class="nav-link py-2.5 text-[15px] text-ink-2 hover:text-ink active:text-ink transition-colors">Σχετικά</a>
         <a href="about.html" class="btn-primary btn-sm mt-2 w-full">
           Δούλεψε μαζί μου
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
@@ -135,13 +135,13 @@
       </div>
 
       <div class="flex flex-wrap items-center justify-center gap-5">
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/piraeuslogo-removebg-preview.png" alt="Τράπεζα Πειραιώς"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/tedxmavilisquare-removebg-preview.png" alt="TEDx Mavili Square"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/unimates.svg" alt="Unimates"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/pos4work-removebg-preview.png" alt="POS4Work"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/hustlehours-removebg-preview_-_Edited.png" alt="Hustle Hours"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/mantislogo-removebg-preview.png" alt="Mantis Beyond Innovation"></div>
-        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition" src="photos/moke.png" alt="MOKE UoI"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 group-active:grayscale-0 transition" src="photos/piraeuslogo-removebg-preview.png" alt="Τράπεζα Πειραιώς"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 group-active:grayscale-0 transition" src="photos/tedxmavilisquare-removebg-preview.png" alt="TEDx Mavili Square"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 group-active:grayscale-0 transition" src="photos/unimates.svg" alt="Unimates"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 group-active:grayscale-0 transition" src="photos/pos4work-removebg-preview.png" alt="POS4Work"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 group-active:grayscale-0 transition" src="photos/hustlehours-removebg-preview_-_Edited.png" alt="Hustle Hours"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 group-active:grayscale-0 transition" src="photos/mantislogo-removebg-preview.png" alt="Mantis Beyond Innovation"></div>
+        <div class="group flex items-center justify-center w-40 h-[72px] p-2"><img class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 group-active:grayscale-0 transition" src="photos/moke.png" alt="MOKE UoI"></div>
       </div>
     </div>
   </section>
@@ -156,16 +156,16 @@
       </div>
 
       <div class="flex items-center gap-2 sm:gap-4">
-        <button type="button" class="shrink-0 w-11 h-11 rounded-full border border-line bg-white text-ink flex items-center justify-center text-lg transition-colors enabled:hover:border-blue enabled:hover:text-blue disabled:opacity-35" id="podcastPrev" aria-label="Προηγούμενο επεισόδιο">
+        <button type="button" class="shrink-0 w-11 h-11 rounded-full border border-line bg-white text-ink flex items-center justify-center text-lg transition-colors enabled:hover:border-blue enabled:active:border-blue enabled:hover:text-blue enabled:active:text-blue disabled:opacity-35" id="podcastPrev" aria-label="Προηγούμενο επεισόδιο">
           <span aria-hidden="true">←</span>
         </button>
 
         <div class="flex-1 overflow-hidden">
           <div class="flex transition-transform duration-300 touch-pan-y" id="podcastTrack">
             <article class="media-slide shrink-0 grow-0 basis-full w-full">
-              <div class="media-video relative w-full aspect-video rounded-[10px] overflow-hidden bg-ink border border-line shadow-card transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover" data-video-id="bmUr1ywkEyI">
+              <div class="media-video relative w-full aspect-video rounded-[10px] overflow-hidden bg-ink border border-line shadow-card transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover" data-video-id="bmUr1ywkEyI">
                 <img class="w-full h-full object-cover border-0 block" src="https://i.ytimg.com/vi/bmUr1ywkEyI/hqdefault.jpg" alt="Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis" loading="lazy">
-                <button type="button" class="media-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[rgba(12,24,38,0.75)] text-white border-none flex items-center justify-center transition hover:bg-blue hover:scale-105" aria-label="Αναπαραγωγή: Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis">
+                <button type="button" class="media-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[rgba(12,24,38,0.75)] text-white border-none flex items-center justify-center transition hover:bg-blue active:bg-blue hover:scale-105 active:scale-105" aria-label="Αναπαραγωγή: Χτίσαμε τη τράπεζα από το μηδέν... / Ioannis Tsavdaridis">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                 </button>
               </div>
@@ -175,9 +175,9 @@
               </div>
             </article>
             <article class="media-slide shrink-0 grow-0 basis-full w-full">
-              <div class="media-video relative w-full aspect-video rounded-[10px] overflow-hidden bg-ink border border-line shadow-card transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover" data-video-id="XSu9yb4Xu_c">
+              <div class="media-video relative w-full aspect-video rounded-[10px] overflow-hidden bg-ink border border-line shadow-card transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover" data-video-id="XSu9yb4Xu_c">
                 <img class="w-full h-full object-cover border-0 block" src="https://i.ytimg.com/vi/XSu9yb4Xu_c/hqdefault.jpg" alt="Πώς κάναμε τα Ιωάννινα ένα παγκόσμιο τεχνολογικό κόμβο... / Tasos Koutlas" loading="lazy">
-                <button type="button" class="media-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[rgba(12,24,38,0.75)] text-white border-none flex items-center justify-center transition hover:bg-blue hover:scale-105" aria-label="Αναπαραγωγή: Πώς κάναμε τα Ιωάννινα ένα παγκόσμιο τεχνολογικό κόμβο... / Tasos Koutlas">
+                <button type="button" class="media-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[rgba(12,24,38,0.75)] text-white border-none flex items-center justify-center transition hover:bg-blue active:bg-blue hover:scale-105 active:scale-105" aria-label="Αναπαραγωγή: Πώς κάναμε τα Ιωάννινα ένα παγκόσμιο τεχνολογικό κόμβο... / Tasos Koutlas">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                 </button>
               </div>
@@ -189,21 +189,21 @@
           </div>
         </div>
 
-        <button type="button" class="shrink-0 w-11 h-11 rounded-full border border-line bg-white text-ink flex items-center justify-center text-lg transition-colors enabled:hover:border-blue enabled:hover:text-blue disabled:opacity-35" id="podcastNext" aria-label="Επόμενο επεισόδιο">
+        <button type="button" class="shrink-0 w-11 h-11 rounded-full border border-line bg-white text-ink flex items-center justify-center text-lg transition-colors enabled:hover:border-blue enabled:active:border-blue enabled:hover:text-blue enabled:active:text-blue disabled:opacity-35" id="podcastNext" aria-label="Επόμενο επεισόδιο">
           <span aria-hidden="true">→</span>
         </button>
       </div>
 
       <div class="flex flex-wrap justify-center gap-3 mt-8">
-        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg transition-colors" href="https://www.youtube.com/@IoannisVongelis/podcasts" target="_blank" rel="noopener">
+        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg active:bg-blue-bg transition-colors" href="https://www.youtube.com/@IoannisVongelis/podcasts" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
           YouTube
         </a>
-        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg transition-colors" href="https://open.spotify.com/show/033Gl7QVgLxrFkmIfz48To" target="_blank" rel="noopener">
+        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg active:bg-blue-bg transition-colors" href="https://open.spotify.com/show/033Gl7QVgLxrFkmIfz48To" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24Zm5.5 17.3a.75.75 0 0 1-1 .26c-2.8-1.7-6.3-2.1-10.4-1.1a.75.75 0 1 1-.35-1.46c4.5-1.06 8.4-.6 11.5 1.3.36.22.48.7.25 1Zm1.47-3.27a.94.94 0 0 1-1.28.31c-3.2-2-8.1-2.55-11.9-1.4a.94.94 0 1 1-.55-1.8c4.3-1.3 9.7-.7 13.4 1.6.44.27.58.85.33 1.29Zm.13-3.4C15.7 8.2 9 8 5.2 9.14a1.13 1.13 0 1 1-.66-2.16c4.4-1.33 11.8-1.08 16.4 1.65a1.13 1.13 0 0 1-1.14 1.95Z"/></svg>
           Spotify
         </a>
-        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg transition-colors" href="https://podcasts.apple.com/gr/podcast/texnologia/id6785920594" target="_blank" rel="noopener">
+        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg active:bg-blue-bg transition-colors" href="https://podcasts.apple.com/gr/podcast/texnologia/id6785920594" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm.007 3.758c1.097 0 1.985.89 1.985 1.987v.802c0 1.097-.888 1.987-1.985 1.987-1.098 0-1.987-.89-1.987-1.987v-.802c0-1.098.89-1.987 1.987-1.987ZM8.323 9.334c.826 0 1.495.67 1.495 1.495v2.958c0 .824-.67 1.495-1.495 1.495-.823 0-1.493-.67-1.493-1.495v-2.958c0-.824.67-1.495 1.493-1.495Zm7.362 0c.824 0 1.495.67 1.495 1.495v2.958c0 .824-.67 1.495-1.495 1.495-.823 0-1.494-.67-1.494-1.495v-2.958c0-.824.67-1.495 1.494-1.495ZM12.007 16.076c1.136 0 2.058.922 2.058 2.058v.696c0 1.137-.922 2.058-2.058 2.058-1.135 0-2.057-.921-2.057-2.058v-.696c0-1.136.922-2.058 2.057-2.058Z"/></svg>
           Apple Podcasts
         </a>
@@ -217,11 +217,11 @@
       <div class="max-w-[640px] mb-12">
         <p class="eyebrow">Templates</p>
         <h2 class="text-[32px] mb-3">Έτοιμα starters</h2>
-        <p class="text-muted text-base m-0">Configs και checklists που χρησιμοποιώ ο ίδιος σε production.</p>
+        <p class="text-muted text-base m-0">Configs και checklists που χρησιμοποιώ ο ίδιος.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="templates/beyond-code-guide.pdf" download class="flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover">
+        <button type="button" data-template-id="beyond-code-guide" data-template-title="Πέρα από τον Κώδικα" class="template-download-trigger w-full text-left flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="tag tag-blue">TEMPLATE 01 · PDF</span>
             <span class="tag tag-neutral">ΟΔΗΓΟΣ ΚΑΡΙΕΡΑΣ</span>
@@ -232,9 +232,9 @@
           <div class="pt-5 border-t border-dashed border-line flex justify-center">
             <span class="inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-wide uppercase text-ink">Download <span aria-hidden="true">→</span></span>
           </div>
-        </a>
+        </button>
 
-        <a href="templates/backend-odigos.pdf" download class="flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover">
+        <button type="button" data-template-id="backend-odigos" data-template-title="Πλήρης οδηγός backend" class="template-download-trigger w-full text-left flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="tag tag-blue">TEMPLATE 02 · PDF</span>
             <span class="tag tag-neutral">Project</span>
@@ -245,9 +245,9 @@
           <div class="pt-5 border-t border-dashed border-line flex justify-center">
             <span class="inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-wide uppercase text-ink">Download <span aria-hidden="true">→</span></span>
           </div>
-        </a>
+        </button>
 
-        <a href="templates/praktiki-askisi-ellada-2026.pdf" download class="flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover">
+        <button type="button" data-template-id="praktiki-askisi-ellada-2026" data-template-title="Πρακτική Άσκηση" class="template-download-trigger w-full text-left flex flex-col bg-white border border-line rounded-[10px] p-7 shadow-card transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="tag tag-blue">TEMPLATE 03 · PDF</span>
             <span class="tag tag-neutral">CHECKLISΤ</span>
@@ -258,7 +258,7 @@
           <div class="pt-5 border-t border-dashed border-line flex justify-center">
             <span class="inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-wide uppercase text-ink">Download <span aria-hidden="true">→</span></span>
           </div>
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -274,7 +274,7 @@
 
     <div class="overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)] [-webkit-mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
       <div class="flex gap-6 w-max px-6 animate-marquee hover:[animation-play-state:paused]">
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 active:-translate-y-1.5 hover:scale-[1.04] active:scale-[1.04] hover:shadow-card-hover active:shadow-card-hover hover:z-[2] active:z-[2] hover:relative active:relative">
           <p class="text-[15px] text-ink-2 mb-6 text-center">"Το system design επεισόδιο μου "ξεκαθάρισε" κάτι που είχα μπλοκάρει μήνες."</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΓΠ</div>
@@ -286,7 +286,7 @@
         </article>
 
 
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 active:-translate-y-1.5 hover:scale-[1.04] active:scale-[1.04] hover:shadow-card-hover active:shadow-card-hover hover:z-[2] active:z-[2] hover:relative active:relative">
           <p class="text-[15px] text-ink-2 mb-6 text-center">"Οι γνώσεις που δίνει χρησιμοποιούνται στην αγορά εργασίας και στις επιχειρήσεις."</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΘΓ</div>
@@ -297,7 +297,7 @@
           </div>
         </article>
 
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 active:-translate-y-1.5 hover:scale-[1.04] active:scale-[1.04] hover:shadow-card-hover active:shadow-card-hover hover:z-[2] active:z-[2] hover:relative active:relative">
           <p class="text-[15px] text-ink-2 mb-6 text-center">"Ο Γιάννης πρόσεξε τις λεπτομέρειες στο website που έφτιαξε για την επιχειρησή μου και για το συνεργάτη μου" </p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΕΔ</div>
@@ -308,7 +308,7 @@
           </div>
         </article>
 
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 active:-translate-y-1.5 hover:scale-[1.04] active:scale-[1.04] hover:shadow-card-hover active:shadow-card-hover hover:z-[2] active:z-[2] hover:relative active:relative">
           <p class="text-[15px] text-ink-2 mb-6 text-center">"Ο Γιάννης ανέλαβε τον σχεδιασμό της ιστοσελίδας του TEDxMaviliSquare, ανταποκρινόμενος άμεσα και αποτελεσματικά σε κάθε ανάγκη που προέκυψε. Η συνεργασία μας χαρακτηρίστηκε από συνέπεια, επαγγελματισμό και άριστη επικοινωνία."</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΓΠ</div>
@@ -319,7 +319,7 @@
           </div>
         </article>
 
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 active:-translate-y-1.5 hover:scale-[1.04] active:scale-[1.04] hover:shadow-card-hover active:shadow-card-hover hover:z-[2] active:z-[2] hover:relative active:relative" aria-hidden="true">
           <p class="text-[15px] text-ink-2 mb-6 text-center">"Το system design επεισόδιο μου "ξεκαθάρισε" κάτι που είχα μπλοκάρει μήνες."</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΓΠ</div>
@@ -330,7 +330,7 @@
           </div>
         </article>
 
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 active:-translate-y-1.5 hover:scale-[1.04] active:scale-[1.04] hover:shadow-card-hover active:shadow-card-hover hover:z-[2] active:z-[2] hover:relative active:relative" aria-hidden="true">
           <p class="text-[15px] text-ink-2 mb-6 text-center">"Οι γνώσεις που δίνει χρησιμοποιούνται στην αγορά εργασίας και στις επιχειρήσεις."</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΘΓ</div>
@@ -341,7 +341,7 @@
           </div>
         </article>
 
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 active:-translate-y-1.5 hover:scale-[1.04] active:scale-[1.04] hover:shadow-card-hover active:shadow-card-hover hover:z-[2] active:z-[2] hover:relative active:relative" aria-hidden="true">
           <p class="text-[15px] text-ink-2 mb-6 text-center">"Τα templates σου εξηγούν βήμα βήμα τα επόμενα βήματα και περιέχουν παραδείγματα ενδιάμεσα στα βήματα"</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΕΔ</div>
@@ -352,7 +352,7 @@
           </div>
         </article>
 
-        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-card-hover hover:z-[2] hover:relative" aria-hidden="true">
+        <article class="flex-none w-[340px] border border-line rounded-[24px] p-7 shadow-card transition-transform hover:-translate-y-1.5 active:-translate-y-1.5 hover:scale-[1.04] active:scale-[1.04] hover:shadow-card-hover active:shadow-card-hover hover:z-[2] active:z-[2] hover:relative active:relative" aria-hidden="true">
           <p class="text-[15px] text-ink-2 mb-6 text-center">"Ο Γιάννης ανέλαβε τον σχεδιασμό της ιστοσελίδας του TEDxMaviliSquare, ανταποκρινόμενος άμεσα και αποτελεσματικά σε κάθε ανάγκη που προέκυψε. Η συνεργασία μας χαρακτηρίστηκε από συνέπεια, επαγγελματισμό και άριστη επικοινωνία."</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center font-mono font-semibold text-sm shrink-0">ΓΠ</div>
@@ -376,26 +376,26 @@
       </div>
 
       <div class="grid gap-3">
-        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5 transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5 transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <div>
             <div class="font-medium text-[15px] mb-1">Software Engineering</div>
           </div>
           <div class="font-mono text-[13px] text-muted">YouTube →</div>
         </a>
-        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5 transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5 transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <div>
             <div class="font-medium text-[15px] mb-1">Startup Lessons</div>
           </div>
           <div class="font-mono text-[13px] text-muted">YouTube →</div>
         </a>
-        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5 transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5 transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <div>
             <div class="font-medium text-[15px] mb-1">AI fundametals</div>
           </div>
           <div class="font-mono text-[13px] text-muted">YouTube →</div>
         </a>
 
-        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5 transition-transform duration-200 hover:-translate-y-1.5 hover:shadow-card-hover" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+        <a class="flex flex-col sm:flex-row sm:items-center items-start justify-between gap-2 sm:gap-4 bg-white border border-line rounded-[10px] px-6 py-5 transition-transform duration-200 hover:-translate-y-1.5 active:-translate-y-1.5 hover:shadow-card-hover active:shadow-card-hover" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <div>
             <div class="font-medium text-[15px] mb-1">Life Vlogs | Building a Tech Startup </div>
           </div>
@@ -404,7 +404,7 @@
       </div>
 
       <div class="flex flex-wrap justify-center gap-3 mt-8">
-        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg transition-colors" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
+        <a class="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-lg text-[15px] font-medium bg-white text-blue border border-blue hover:bg-blue-bg active:bg-blue-bg transition-colors" href="https://www.youtube.com/@IoannisVongelis/playlists" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
           YouTube
         </a>
@@ -424,7 +424,7 @@
         <div class="mt-7">
           <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-0">Επικοινωνία</h4>
           <ul class="grid gap-2.5 mt-4">
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="mailto:contact@vongelis.net">contact@vongelis.net</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="mailto:contact@vongelis.net">contact@vongelis.net</a></li>
           </ul>
         </div>
       </div>
@@ -433,17 +433,17 @@
         <div>
           <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-4">Περιεχόμενο</h4>
           <ul class="grid gap-2.5">
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="#podcast">Podcast</a></li>
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="#templates">Templates</a></li>
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="#videos">Videos</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="#podcast">Podcast</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="#templates">Templates</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="#videos">Videos</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-[13px] font-mono text-muted uppercase tracking-wide mb-4">Site</h4>
           <ul class="grid gap-2.5">
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="about.html">Σχετικά</a></li>
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="portfolio.html">Portfolio</a></li>
-            <li><a class="text-sm text-ink-2 hover:text-blue transition-colors" href="#testimonials">Κριτικές</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="about.html">Σχετικά</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="portfolio.html">Portfolio</a></li>
+            <li><a class="text-sm text-ink-2 hover:text-blue active:text-blue transition-colors" href="#testimonials">Κριτικές</a></li>
           </ul>
         </div>
       </div>
@@ -451,16 +451,16 @@
 
     <div class="flex flex-col items-center gap-5 pt-8 border-t border-line">
       <div class="flex gap-3">
-        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://www.youtube.com/@IoannisVongelis" target="_blank" rel="noopener" aria-label="YouTube">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue active:bg-blue hover:border-blue active:border-blue hover:text-white active:text-white transition-colors" href="https://www.youtube.com/@IoannisVongelis" target="_blank" rel="noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
         </a>
-        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue active:bg-blue hover:border-blue active:border-blue hover:text-white active:text-white transition-colors" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </a>
-        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="https://github.com/JohnVogg" target="_blank" rel="noopener" aria-label="GitHub">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue active:bg-blue hover:border-blue active:border-blue hover:text-white active:text-white transition-colors" href="https://github.com/JohnVogg" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </a>
-        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue hover:border-blue hover:text-white transition-colors" href="mailto:contact@vongelis.net" aria-label="Email">
+        <a class="flex items-center justify-center w-9 h-9 rounded-full border border-line text-ink-2 hover:bg-blue active:bg-blue hover:border-blue active:border-blue hover:text-white active:text-white transition-colors" href="mailto:contact@vongelis.net" aria-label="Email">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M2 4h20v16H2V4zm2 2.236V6h.01L12 12.5l7.99-6.5H20v.236l-8 6.507-8-6.507zM4 8.605V18h16V8.605l-7.375 6a1 1 0 0 1-1.25 0L4 8.605z"/></svg>
         </a>
       </div>
@@ -468,6 +468,25 @@
     </div>
   </div>
 </footer>
+
+<div id="templateModal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/50" role="dialog" aria-modal="true" aria-labelledby="templateModalTitle">
+  <div class="w-full max-w-[420px] bg-white rounded-[10px] p-7 relative">
+    <button type="button" id="templateModalClose" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-ink-2 hover:bg-paper active:bg-paper transition-colors" aria-label="Κλείσιμο">
+      <span aria-hidden="true">×</span>
+    </button>
+    <p class="eyebrow">Download</p>
+    <h3 id="templateModalTitle" class="text-[19px] mb-2.5">Δώσε το email σου για να το κατεβάσεις</h3>
+    <form id="templateModalForm" novalidate>
+      <input type="hidden" id="templateModalId" name="templateId" value="">
+      <label class="block text-[13px] font-mono uppercase tracking-wide text-muted mb-2" for="templateModalEmail">Email</label>
+      <input type="email" id="templateModalEmail" name="email" required placeholder="you@example.com" class="w-full border border-line rounded-lg px-4 py-3 text-[15px] mb-2 focus:outline-none focus:border-blue">
+      <p id="templateModalStatus" class="text-sm mb-4 min-h-[20px]" role="status"></p>
+      <button type="submit" id="templateModalSubmit" class="btn-primary w-full disabled:opacity-50">
+        Λήψη PDF
+      </button>
+    </form>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
