@@ -245,7 +245,7 @@
     var templateModalStatus = document.getElementById('templateModalStatus');
     var templateModalSubmit = document.getElementById('templateModalSubmit');
     var templateModalClose = document.getElementById('templateModalClose');
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var emailPattern = /^[^\s@.]+(\.[^\s@.]+)*@[^\s@.]+(\.[^\s@.]+)*\.[a-zA-Z]{2,}$/;
 
     function openTemplateModal(templateId) {
       templateModalId.value = templateId;
