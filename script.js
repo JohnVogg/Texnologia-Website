@@ -228,7 +228,7 @@
   initMediaCarousel('podcastTrack', 'podcastPrev', 'podcastNext');
 
   // Template download gate (email capture -> Google Sheet -> direct PDF download)
-  var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiUfhyYrJIKHVBdAOuIf5rmFbU32M7J2P4YCCOPcBiTzp1P0ELSnWJtWNlFwvErhlH/exec';
+  var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxCWvghFNolN8DHzdgcBOeD3huQaM2zcB2h9888ynPHMagtWtOYaaL5w05M1F9Xl3sI5Q/exec';
 
   var TEMPLATE_FILES = {
     'beyond-code-guide': 'templates/beyond-code-guide.pdf',
