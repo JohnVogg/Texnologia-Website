@@ -43,30 +43,22 @@
       });
     };
 
-    var currentPage = window.location.pathname.split('/').pop();
+    var spySections = ['podcast', 'templates', 'videos', 'portfolio', 'contact']
+      .map(function (id) { return document.getElementById(id); })
+      .filter(Boolean);
 
-    if (currentPage === 'about.html') {
-      setActiveNav('about');
-    } else if (currentPage === 'portfolio.html') {
-      setActiveNav('portfolio');
-    } else {
-      var spySections = ['podcast', 'templates', 'videos']
-        .map(function (id) { return document.getElementById(id); })
-        .filter(Boolean);
-
-      if (spySections.length && 'IntersectionObserver' in window) {
-        var sectionObserver = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              setActiveNav(entry.target.id);
-            }
-          });
-        }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
-
-        spySections.forEach(function (section) {
-          sectionObserver.observe(section);
+    if (spySections.length && 'IntersectionObserver' in window) {
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setActiveNav(entry.target.id);
+          }
         });
-      }
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+      spySections.forEach(function (section) {
+        sectionObserver.observe(section);
+      });
     }
   }
 

@@ -21,9 +21,7 @@ This website serves as my digital presence online. It includes information about
 - Tailwind CSS
 
 ## Project Structure
-- index.html - Home page
-- about.html - About page
-- portfolio.html - Portfolio page
+- index.html - Single-page site (Podcast, Templates, Videos, Portfolio, Contact)
 - script.js - Main JavaScript file
 - photos/ - Project images
 - templates/ - Reusable templates
